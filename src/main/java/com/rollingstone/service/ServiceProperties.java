@@ -7,18 +7,15 @@ import javax.validation.constraints.NotNull;
 /*
 * demonstrates how service-specific properties can be injected
 */
-@ConfigurationProperties(prefix = "todo.service", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "person.service", ignoreUnknownFields = false)
 @Component
 public class ServiceProperties {
 	
-	//TODO Change Name
+	@NotNull // you can also create configurationPropertiesValidator
+	private String name = "Person Service";
 	
 	@NotNull // you can also create configurationPropertiesValidator
-	private String name = "Todo Service";
-	
-	//TODO Change Desc
-	@NotNull // you can also create configurationPropertiesValidator
-	private String description = "Todo Service Description";
+	private String description = "Person Spring Data JPA Service";
 
 	public String getName() {
 		return this.name;
