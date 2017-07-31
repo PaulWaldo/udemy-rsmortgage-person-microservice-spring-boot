@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.rollingstone</groupId>
-	<artifactId>udemy-rsmortgage-microservice-spring-boot-template</artifactId>
+	<artifactId>udemy-rsmortgage-person-microservice-spring-boot</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>udemy-rsmortgage-microservice-spring-boot-template</name>
-	<description>Spring Boot Starter Template for a Database Backed Microservice</description>
+	<name>udemy-rsmortgage-person-microservice-spring-boot</name>
+	<description>Spring Boot Person Microservice</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
