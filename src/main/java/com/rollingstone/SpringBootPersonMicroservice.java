@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableAutoConfiguration // Sprint Boot Auto Configuration
 @ComponentScan(basePackages = "com.rollingstone")
 
-public class SpringBootMicroserviceStarterTemplateTODOChangeThisToYourApp {
+public class SpringBootPersonMicroservice {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootMicroserviceStarterTemplateTODOChangeThisToYourApp.class, args);
+		SpringApplication.run(SpringBootPersonMicroservice.class, args);
 	}
 }
