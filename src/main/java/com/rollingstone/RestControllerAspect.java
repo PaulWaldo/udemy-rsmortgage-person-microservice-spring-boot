@@ -1,6 +1,7 @@
 package com.rollingstone;
 
 import java.util.NoSuchElementException;
+
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -26,41 +27,34 @@ public class RestControllerAspect {
 		logger.info(":::::AOP Before REST call:::::" + pjp);
 	}
 
-	//TODO Change the method name to your Create Method
-	
-	@AfterReturning("execution(public * com.rollingstone.api.rest.*Controller.createTODO*(..))")
-	public void afterCallingCreateTODO(JoinPoint pjp) {
+	@AfterReturning("execution(public * com.rollingstone.api.rest.*Controller.createPerson*(..))")
+	public void afterCallingCreatePerson(JoinPoint pjp) {
 		logger.info(":::::AOP @AfterReturning Create REST call:::::" + pjp);
-		counterService.increment("com.rollingstone.api.rest.TODOController.createTODO");
+		counterService.increment("com.rollingstone.api.rest.PersonController.createPerson");
 	}
 
-	//TODO Change the method name to your GetAll Method
-	@AfterReturning("execution(public * com.rollingstone.api.rest.*Controller.getAllTODO*(..))")
-	public void afterCallinggetAllTODO(JoinPoint pjp) {
-		logger.info(":::::AOP @AfterReturning getAllTODO REST call:::::" + pjp);
+	@AfterReturning("execution(public * com.rollingstone.api.rest.*Controller.getAllPersons*(..))")
+	public void afterCallinggetAllPersons(JoinPoint pjp) {
+		logger.info(":::::AOP @AfterReturning getAllPersons REST call:::::" + pjp);
 
-		counterService.increment("com.rollingstone.api.rest.TODOController.getAllTODO");
+		counterService.increment("com.rollingstone.api.rest.PersonController.getAllPerson");
 	}
 
-	//TODO Change the method name to your Get Method
-	@AfterReturning("execution(public * com.rollingstone.api.rest.*Controller.getTODO*(..))")
-	public void afterCallinggetTODO(JoinPoint pjp) {
-		logger.info(":::::AOP @AfterReturning getTODO REST call:::::" + pjp);
-		counterService.increment("com.rollingstone.api.rest.TODOController.getTODO");
+	@AfterReturning("execution(public * com.rollingstone.api.rest.*Controller.getPerson*(..))")
+	public void afterCallinggetPerson(JoinPoint pjp) {
+		logger.info(":::::AOP @AfterReturning getPerson REST call:::::" + pjp);
+		counterService.increment("com.rollingstone.api.rest.PersonController.getPerson");
 	}
 
-	//TODO Change the method name to your Update Method
 
-	@AfterReturning("execution(public * com.rollingstone.api.rest.*Controller.updateTODO*(..))")
-	public void afterCallingupdateTODO(JoinPoint pjp) {
-		logger.info(":::::AOP @AfterReturning update TODO REST call:::::" + pjp);
-		counterService.increment("com.rollingstone.api.rest.TODOController.updateTODO");
+	@AfterReturning("execution(public * com.rollingstone.api.rest.*Controller.updatePerson*(..))")
+	public void afterCallingupdatePerson(JoinPoint pjp) {
+		logger.info(":::::AOP @AfterReturning update Person REST call:::::" + pjp);
+		counterService.increment("com.rollingstone.api.rest.PersonController.updatePerson");
 	}
-
-	//TODO Change the method name to your Application
 
 	@AfterThrowing(pointcut = "execution(public * com.rollingstone.api.rest.*Controller.*(..))", throwing = "e")
-	public void afterTODOThrowsException(NoSuchElementException e) {
-		counterService.increment("counter.errors.TODO.controller");
+	public void afterPersonThrowsException(NoSuchElementException e) {
+		counterService.increment("counter.errors.Person.controller");
 	}
 }
