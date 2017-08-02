@@ -10,6 +10,8 @@ import com.rollingstone.domain.Person;
  */
 
 public class PersonServiceEvent extends ApplicationEvent {
+	private static final long serialVersionUID = -6121624308782503383L;
+	
 	Person eventPerson;
 	String eventType;
 
