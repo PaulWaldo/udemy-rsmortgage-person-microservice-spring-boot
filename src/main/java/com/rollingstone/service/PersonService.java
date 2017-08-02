@@ -46,8 +46,8 @@ public class PersonService {
 		Page<Person> pageOfPersons = personRepository.findAll(new PageRequest(page, size));
 		// example of adding to the /metrics
 		if (size > 50) {
-			log.info("Large Page Size for getAlltodos");
-			counterService.increment("com.rollingstone.todoService.getAll.largePayload");
+			log.info("Large Page Size for getAllPersons");
+			counterService.increment("com.rollingstone.personService.getAll.largePayload");
 		}
 		return pageOfPersons;
 	}
