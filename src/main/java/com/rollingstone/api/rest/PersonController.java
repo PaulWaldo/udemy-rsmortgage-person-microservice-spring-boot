@@ -33,7 +33,7 @@ public class PersonController extends AbstractRestHandler {
 	@RequestMapping(value = "", method = RequestMethod.POST, consumes = { "application/json",
 			"application/xml" }, produces = { "application/json", "application/xml" })
 	@ResponseStatus(HttpStatus.CREATED)
-	public void createTODO(@RequestBody Person person, HttpServletRequest request, HttpServletResponse response) {
+	public void createPerson(@RequestBody Person person, HttpServletRequest request, HttpServletResponse response) {
 		Person createdPerson = this.personService.createPerson(person);
 		eventPublisher.publishEvent(new PersonServiceEvent(this, "PersonCreated", createdPerson));
 		response.setHeader("Location", request.getRequestURL().append("/").append(createdPerson.getId()).toString());
