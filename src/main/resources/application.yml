@@ -5,11 +5,6 @@
 server:
   port: 8090
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-      
 spring.jmx:
    enabled: false
 
@@ -31,9 +26,9 @@ management:
 
 #default project info followed by actual injected pom-specified values.
 project:
-  name: spring-boot-todo-service
+  name: spring-boot-person-service
   version: 0.1
-  description: spring-boot-todo-service
+  description: spring-boot-person-microservice
 info:
   build:
     artifact: ${project.artifactId}
@@ -66,7 +61,3 @@ spring:
     hibernate:
       dialect: org.hibernate.dialect.MySQLInnoDBDialect
       ddl-auto: update # todo: in non-dev environments, comment this out:
-
-
-user.service:
-  name: 'test profile:'
