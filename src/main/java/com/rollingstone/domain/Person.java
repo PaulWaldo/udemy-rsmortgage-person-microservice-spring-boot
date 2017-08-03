@@ -1,8 +1,17 @@
 package com.rollingstone.domain;
 
 import java.util.Date;
-import javax.persistence.*;
-import javax.xml.bind.annotation.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /*
 * a simple Person domain entity doubling as a DTO
